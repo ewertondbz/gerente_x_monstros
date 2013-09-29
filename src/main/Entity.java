@@ -19,7 +19,7 @@ public class Entity {
 		brain.update();
 		animation.setLocation(brain.getCurrentPosition());
 		animation.setState(brain.getMovingState());
-		if (brain.getMovingState() != MovingState.STOPPED)
+		if (brain.getMovingState() != MovingState.STANDING)
 			animation.advanceFrame();
 		animation.repaint();
 	}

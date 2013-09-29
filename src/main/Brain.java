@@ -15,6 +15,8 @@ public class Brain {
 		path.add(new Point(100, 0));
 		path.add(new Point(100, 300));
 		path.add(new Point(400, 300));
+		path.add(new Point(400, 100));
+		path.add(new Point(200, 100));
 		updateMovingState(path.get(0));
 	}
 
@@ -44,7 +46,7 @@ public class Brain {
 
 	public void update() {
 		if (path.isEmpty()) {
-			state = MovingState.STOPPED;
+			state = MovingState.STANDING;
 		} else {
 			walk();
 		}

@@ -53,7 +53,7 @@ public class Animation extends JPanel {
 	}
 
 	public void setState(MovingState state) {
-		if (state == MovingState.STOPPED) {
+		if (state == MovingState.STANDING) {
 			currentFrame = 0;
 		} else if (this.state != state) {
 			this.state = state;

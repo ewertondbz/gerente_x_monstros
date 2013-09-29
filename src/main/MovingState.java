@@ -2,7 +2,7 @@ package main;
 
 public enum MovingState {
 
-	UP(0, -1), RIGHT(1, 0), DOWN(0, 1), LEFT(-1, 0), STOPPED(0, 0);
+	UP(0, -1), RIGHT(1, 0), DOWN(0, 1), LEFT(-1, 0), STANDING(0, 0);
 
 	private int x, y;
 
