@@ -1,9 +1,12 @@
 package main;
 
+import java.awt.Rectangle;
+
 public class Entity {
 
 	private Animation animation;
 	private Brain brain = new Brain();
+	private Rectangle rectangle = new Rectangle();
 
 	public Entity(Animation animation) {
 		this.animation = animation;
@@ -17,6 +20,7 @@ public class Entity {
 
 	public void update() {
 		brain.update();
+		rectangle.setLocation(brain.getCurrentPosition());
 		animation.setLocation(brain.getCurrentPosition());
 		animation.setState(brain.getMovingState());
 		if (brain.getMovingState() != MovingState.STANDING)

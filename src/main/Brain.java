@@ -7,16 +7,18 @@ import java.util.List;
 public class Brain {
 
 	private List<Point> path = new ArrayList<Point>();
-	private Point currentPosition = new Point();
+	private Point currentPosition = new Point(-20, 480);
 	private static int ADVANCE = 3;
 	private MovingState state = MovingState.DOWN;
 
 	public Brain() {
-		path.add(new Point(100, 0));
-		path.add(new Point(100, 300));
-		path.add(new Point(400, 300));
-		path.add(new Point(400, 100));
-		path.add(new Point(200, 100));
+		path.add(new Point(490, 480));
+		path.add(new Point(490, 180));
+		path.add(new Point(290, 180));
+		path.add(new Point(290, 280));
+		path.add(new Point(90, 280));
+		path.add(new Point(90, 80));
+		path.add(new Point(600, 80));
 		updateMovingState(path.get(0));
 	}
 
@@ -57,6 +59,7 @@ public class Brain {
 		currentPosition.translate(state.getX() * ADVANCE, state.getY() * ADVANCE);
 		adjustIfOutOfPath(path.get(0));
 		if (currentPosition.equals(path.get(0))) {
+			System.out.println(path.get(0));
 			path.remove(0);
 		}
 	}

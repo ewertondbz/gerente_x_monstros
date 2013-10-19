@@ -4,8 +4,10 @@ public class Game {
 
 	private static Game instance = new Game();
 	private GameWindow gameWindow;
-	private Entity zombie;
-	private Animation animation;
+	private GameMap gameMap = new GameMap();
+
+	// private Entity zombie;
+	// private Animation animation;
 
 	public static Game getInstance() {
 		return instance;
@@ -18,11 +20,7 @@ public class Game {
 	public void init() {
 		gameWindow = new GameWindow();
 		gameWindow.init();
-
-		animation = new Animation(144, 128); // sprite da morte caminhando
-		zombie = new Entity(animation);
-
-		zombie.init();
+		gameMap.init();
 	}
 
 	public void start() {
@@ -32,7 +30,7 @@ public class Game {
 				while (true) {
 					long currentTime = System.currentTimeMillis();
 					if (currentTime - time > 100) {
-						zombie.update();
+						gameMap.update();
 						time = currentTime;
 					}
 					try {
