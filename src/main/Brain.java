@@ -1,24 +1,16 @@
 package main;
 
 import java.awt.Point;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Brain {
 
-	private List<Point> path = new ArrayList<Point>();
+	private List<Point> path = Path.getInstance().getPointsList();
 	private Point currentPosition = new Point(-20, 480);
 	private static int ADVANCE = 3;
 	private MovingState state = MovingState.DOWN;
 
 	public Brain() {
-		path.add(new Point(490, 480));
-		path.add(new Point(490, 180));
-		path.add(new Point(290, 180));
-		path.add(new Point(290, 280));
-		path.add(new Point(90, 280));
-		path.add(new Point(90, 80));
-		path.add(new Point(600, 80));
 		updateMovingState(path.get(0));
 	}
 

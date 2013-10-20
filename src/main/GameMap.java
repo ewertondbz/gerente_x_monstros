@@ -1,15 +1,26 @@
 package main;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class GameMap {
 
-	private MonsterWaveControl monsterWaveControl = new MonsterWaveControl();
+	private Set<ControlComponent> controlComponents = new HashSet<ControlComponent>();
 
-	public void init() {
-		monsterWaveControl.init();
+	public GameMap() {
+		controlComponents.add(new MonsterWaveControl());
+		controlComponents.add(new TurretControl());
+		controlComponents.add(SelectionControl.getInstance());
 	}
 
-	public void update(long ticks) {
-		monsterWaveControl.update(ticks);
+	public void init() {
+		for (ControlComponent controlComponent : controlComponents)
+			controlComponent.init();
+	}
+
+	public void update(long deltaTicks) {
+		for (ControlComponent controlComponent : controlComponents)
+			controlComponent.update(deltaTicks);
 	}
 
 }

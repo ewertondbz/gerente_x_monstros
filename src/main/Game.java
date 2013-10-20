@@ -1,5 +1,6 @@
 package main;
 
+
 public class Game {
 
 	private static Game instance = new Game();

@@ -26,5 +26,4 @@ public class Background extends JPanel {
 		}
 		setBounds(0, 0, image.getWidth(), image.getHeight());
 	}
-
 }

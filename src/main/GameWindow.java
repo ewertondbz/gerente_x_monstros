@@ -19,6 +19,11 @@ public class GameWindow {
 		backgroundPanel.setLayout(null);
 		frame.setTitle("O jogo");
 		frame.setResizable(false);
+		addListeners();
+	}
+
+	private void addListeners() {
+		backgroundPanel.addMouseMotionListener(SelectionControl.getInstance());
 	}
 
 	public void show() {
@@ -32,5 +37,9 @@ public class GameWindow {
 
 	public void add(JPanel panel) {
 		backgroundPanel.add(panel);
+	}
+
+	public void notifyAddTurret(Turret turret) {
+		// TODO
 	}
 }

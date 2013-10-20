@@ -1,6 +1,6 @@
 package main;
 
-public class MonsterWaveControl {
+public class MonsterWaveControl implements ControlComponent {
 
 	private static final int NUMBER_OF_WAVES = 4;
 	private MonsterWave currentMonsterWave;
