@@ -59,7 +59,6 @@ public class Brain {
 		currentPosition.translate(state.getX() * ADVANCE, state.getY() * ADVANCE);
 		adjustIfOutOfPath(path.get(0));
 		if (currentPosition.equals(path.get(0))) {
-			System.out.println(path.get(0));
 			path.remove(0);
 		}
 	}

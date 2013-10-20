@@ -1,17 +1,15 @@
 package main;
 
 import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.Rectangle;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
 
-import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 public class Animation extends JPanel {
 
 	private static final long serialVersionUID = 3325101737095522920L;
-	private BufferedImage image;
+	private Image image;
 	private static final int WIDTH = 24, HEIGHT = 32, MAX_FRAMES = 3;
 	private MovingState state = MovingState.DOWN;
 	private Rectangle frameRectangle = new Rectangle();
@@ -40,11 +38,7 @@ public class Animation extends JPanel {
 	}
 
 	public void init() {
-		try {
-			image = ImageIO.read(getClass().getResourceAsStream("/Monster.png"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		image = ImageLoader.load(getClass().getResourceAsStream("/Monster.png"));
 		setBounds(0, 0, WIDTH, HEIGHT);
 	}
 
