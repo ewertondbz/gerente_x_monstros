@@ -24,12 +24,13 @@ public class SelectionPanel extends JPanel {
 	}
 
 	public void select(Point locationOnScreen) {
-		if (locationIsValid(locationOnScreen))
+		locationOnScreen.y -= 24;
+		if (locationIsValid(adjust(locationOnScreen)))
 			setLocation(adjust(locationOnScreen));
 	}
 
 	private boolean locationIsValid(Point point) {
-		return Path.getInstance().intersects(new Rectangle(point.x, point.y, WIDTH, HEIGHT));
+		return !Path.getInstance().intersects(new Rectangle(point.x, point.y, WIDTH, HEIGHT)) && point.x <= 576;
 	}
 
 	public void init() {
