@@ -13,12 +13,8 @@ public class Background extends JPanel {
 	private BufferedImage image;
 
 	@Override
-	public void paint(Graphics g) {
-		update(g);
-	}
-
-	@Override
-	public void update(Graphics g) {
+	protected void paintComponent(Graphics g) {
+		super.paintComponent(g);
 		g.drawImage(image, 0, 0, null);
 	}
 
@@ -29,8 +25,6 @@ public class Background extends JPanel {
 			e.printStackTrace();
 		}
 		setBounds(0, 0, image.getWidth(), image.getHeight());
-		Game.getInstance().getGameWindow().add(this);
-		repaint();
 	}
 
 }

@@ -2,16 +2,14 @@ package main;
 
 public class GameMap {
 
-	private Background background = new Background();
-	private Entity monster = EntityFactory.createDeath();
+	private MonsterWaveControl monsterWaveControl = new MonsterWaveControl();
 
 	public void init() {
-		monster.init();
-		background.init();
+		monsterWaveControl.init();
 	}
 
-	public void update() {
-		monster.update();
+	public void update(long ticks) {
+		monsterWaveControl.update(ticks);
 	}
 
 }

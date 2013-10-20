@@ -2,13 +2,13 @@ package main;
 
 import java.awt.Rectangle;
 
-public class Entity {
+public class Monster {
 
 	private Animation animation;
 	private Brain brain = new Brain();
 	private Rectangle rectangle = new Rectangle();
 
-	public Entity(Animation animation) {
+	public Monster(Animation animation) {
 		this.animation = animation;
 	}
 
